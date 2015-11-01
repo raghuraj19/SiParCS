@@ -1,0 +1,11 @@
+#!/bin/bash
+#BSUB -J mKrigWorkflowComparison2
+#BSUB -q gpgpu
+#BSUB -n 16 
+#BSUB -P P86850053
+#BSUB -W 0:20
+#BSUB -o out.%J
+#BSUB -e err.%J
+#BSUB -R "span[ptile=16]"
+
+R CMD BATCH --no-save mKrigWorkflowComparison2.r mKrigWorkflowComparison2out.$$
